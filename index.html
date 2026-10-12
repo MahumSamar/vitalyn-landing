@@ -210,7 +210,7 @@ h1,h2,p,figure,ul{margin:0}
 }
 .pager{display:none}
 .panel{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:calc(var(--u) * 429.5)}
-.panel > img.cover{position:absolute;object-fit:cover}
+.panel > .cover{position:absolute;object-fit:cover}
 /* Photo: exact reference crop (scale .3735, origin +3/-5); edge strip filled with the photo's own border colours */
 .panel--photo{background:#7fd9a2}
 .panel--photo::before{
@@ -221,7 +221,7 @@ h1,h2,p,figure,ul{margin:0}
   position:absolute;left:calc(var(--u) * 3);top:calc(var(--u) * -5);
   height:max(calc(var(--u) * 486.3), calc(100% + var(--u) * 5));aspect-ratio:1208 / 1302;
 }
-.frame > img{width:100%;height:100%;object-fit:cover}
+.frame > video{display:block;width:100%;height:100%;object-fit:cover}
 /* sparkle centre measured at image-space (352.5, 314.5) of 451.2 × 486.3 */
 .frame .sparkle{
   position:absolute;left:78.125%;top:64.67%;transform:translate(-50%,-50%);
@@ -233,7 +233,7 @@ h1,h2,p,figure,ul{margin:0}
   content:"";position:absolute;right:0;top:calc(var(--u) * -1);width:calc(var(--u) * 10);
   height:max(calc(var(--u) * 459.8), calc(100% + var(--u) * 1));background:linear-gradient(180deg,#a40801 1.6%,#910501 4.7%,#900601 7.8%,#960801 10.9%,#930701 14.1%,#910601 17.2%,#930701 20.3%,#8a0501 23.4%,#880601 26.6%,#900600 29.7%,#980401 32.8%,#950601 35.9%,#950701 39.1%,#9f0701 42.2%,#a80701 45.3%,#ac0801 48.4%,#bd0e01 51.6%,#f02903 54.7%,#f72f03 57.8%,#f73105 60.9%,#fa3506 64.1%,#fb3908 67.2%,#fb4818 70.3%,#fb673e 73.4%,#fb7652 76.6%,#fb714c 79.7%,#fc744d 82.8%,#fc7750 85.9%,#fc7951 89.1%,#fc835f 92.2%,#fc8866 95.3%,#fc7e59 98.4%);
 }
-.panel--flower > img.cover{
+.panel--flower > .cover{
   left:calc(var(--u) * 1);top:calc(var(--u) * -1);
   width:auto;height:max(calc(var(--u) * 459.8), calc(100% + var(--u) * 1));aspect-ratio:1211 / 1299;
 }
@@ -432,10 +432,10 @@ h1,h2,p,figure,ul{margin:0}
   /* component scale = fit the 437 × 430 reference panel into this panel */
   .panel > *{--u:min(1.25px, calc(100cqw / 437), calc(100cqh / 430))}
   .panel::before{display:none}
-  .panel > img.cover{inset:0;left:0;top:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transform:none}
+  .panel > .cover{inset:0;left:0;top:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transform:none}
   .panel--photo > .frame{inset:0;left:0;top:0;width:100%;height:100%;aspect-ratio:auto}
-  .frame > img{object-position:32% 24%}
-  .panel--flower > img.cover{object-position:40% 30%}
+  .frame > video{object-position:32% 24%}
+  .panel--flower > .cover{object-position:40% 30%}
   .frame .sparkle{left:80%;top:72%}
 
   /* pager dots (only rendered when some panels are off-screen) */
@@ -565,7 +565,7 @@ h1,h2,p,figure,ul{margin:0}
       <div class="track" tabindex="0" aria-label="Highlights — swipe or use arrow keys to see more">
       <figure class="panel panel--photo">
         <div class="frame">
-          <img src="assets/patient.webp" alt="Smiling patient in a yellow t-shirt" width="1208" height="1302" decoding="async">
+          <video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261012_093424_e313800f-ea6c-4ead-90a2-bbe0a6c51bac.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/15828486-d756-4835-9fce-8f0e8cf95ea2.webp" width="1208" height="1302" autoplay muted loop playsinline preload="auto" aria-label="Smiling patient in a yellow t-shirt"></video>
           <svg class="sparkle" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
 <defs>
 <radialGradient id="sp-g" cx="70" cy="70" r="52" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".88"/><stop offset=".19" stop-color="#fff" stop-opacity=".72"/><stop offset=".33" stop-color="#fff" stop-opacity=".48"/><stop offset=".43" stop-color="#fff" stop-opacity=".35"/><stop offset=".54" stop-color="#fff" stop-opacity=".2"/><stop offset=".66" stop-color="#fff" stop-opacity=".1"/><stop offset=".8" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
@@ -604,7 +604,7 @@ h1,h2,p,figure,ul{margin:0}
       </div>
 
       <div class="panel panel--flower">
-        <img class="cover" src="assets/flower.webp" alt="" width="1211" height="1299" decoding="async">
+        <video class="cover" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261012_093314_b75d4620-4b06-4bba-996b-ec4f6b6e9ec8.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/8a13cf5f-fc2c-40eb-8727-b8855c23600b.webp" width="1211" height="1299" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
         <div class="stack">
           <article class="card card--sat" aria-label="Patient satisfaction 96 percent, excellent">
             <h2 class="sat__title">Patient Satisfaction</h2>
@@ -615,9 +615,9 @@ h1,h2,p,figure,ul{margin:0}
           </article>
           <div class="card card--providers">
             <ul class="avatars" aria-hidden="true">
-              <li><img src="assets/provider-1.webp" alt=""></li>
-              <li><img src="assets/provider-2.webp" alt=""></li>
-              <li><img src="assets/provider-3.webp" alt=""></li>
+              <li><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/a23f61b9-ca15-44a8-b5dc-2477885362f1.webp" alt=""></li>
+              <li><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/a72b2dc4-2e81-42c4-af7d-727a9b3fc009.webp" alt=""></li>
+              <li><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/c11a2d0f-4f17-46ed-8817-e63c43787e0a.webp" alt=""></li>
             </ul>
             <p class="providers__text"><b>50K+</b><span>Healthcare Providers</span></p>
           </div>
